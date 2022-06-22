@@ -1,0 +1,8 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        arr, mx = [], 0
+        for letter in s:
+            if letter in arr: del(arr[0:arr.index(letter)+1])
+            arr.append(letter)
+            mx = max( mx, len(arr))
+        return mx
